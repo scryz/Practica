@@ -9,3 +9,14 @@ C:\Users\spere\Desktop\Практика\Практика\obj\Debug\Практи�
 C:\Users\spere\Desktop\Практика\Практика\obj\Debug\Практика.csproj.CoreCompileInputs.cache
 C:\Users\spere\Desktop\Практика\Практика\obj\Debug\Практика.exe
 C:\Users\spere\Desktop\Практика\Практика\obj\Debug\Практика.pdb
+C:\Users\spere\Desktop\GitHub\Practica\Практика\bin\Debug\Практика.exe.config
+C:\Users\spere\Desktop\GitHub\Practica\Практика\bin\Debug\Практика.exe
+C:\Users\spere\Desktop\GitHub\Practica\Практика\bin\Debug\Практика.pdb
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.csproj.AssemblyReference.cache
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.csproj.SuggestedBindingRedirects.cache
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.Form1.resources
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.Properties.Resources.resources
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.csproj.GenerateResource.cache
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.csproj.CoreCompileInputs.cache
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.exe
+C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.pdb

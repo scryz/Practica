@@ -131,7 +131,7 @@ namespace Практика
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listBox1.Items.AddRange(File.ReadAllLines("Данные.txt"));
+            listBox1.Items.AddRange(File.ReadAllLines("Данные абитуриента.txt"));
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
