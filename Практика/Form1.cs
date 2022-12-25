@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
@@ -32,21 +33,102 @@ namespace Практика
 
         private void Загрузить_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" &&  textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != ""  && textBox7.Text != "" && textBox8.Text != "")
+            String line4 = textBox4.Text;
+            Regex tb4 = new Regex(@"[0-9]{2}[.][0-9]{2}[.][0-9]{2}");
+            MatchCollection match4  = tb4.Matches(line4);
+            if (match4.Count == 1)
             {
-                listBox1.Items.Add(textBox5.Text + " " + textBox4.Text + " " + textBox3.Text + " " + textBox2.Text + " "  + textBox1.Text + " " + dateTimePicker2.Text + " " + textBox7.Text + " " + textBox8.Text);
+                textBox4.Text = match4[0].Value;
+
+                String line3 = textBox3.Text;
+                Regex tb3 = new Regex(@"([А-Я][а-я]+)|[а-я]+");
+                MatchCollection match3 = tb3.Matches(line3);
+                if (match3.Count >= 1)
+                {
+
+                    textBox3.Text = match3[0].Value;
+
+                    String lineCB1 = comboBox1.Text;
+                    Regex tbCB1 = new Regex("Договор|Бюджет");
+                    MatchCollection matchCB1 = tbCB1.Matches(lineCB1);
+                    if (matchCB1.Count == 1)
+                    {
+
+                        comboBox1.Text = matchCB1[0].Value;
+
+
+                        String line1 = textBox1.Text;
+                        Regex tb1 = new Regex(@"[А-Я][а-я]+\s[А-Я][а-я]+\s[А-Я][а-я]+");
+                        MatchCollection match1 = tb1.Matches(line1);
+                        if (match1.Count >= 1)
+                        {
+
+                            textBox1.Text = match1[0].Value;
+
+
+                            String lineCB2 = comboBox2.Text;
+                            Regex tbCB2 = new Regex(@"Да|Нет");
+                            MatchCollection matchCB2 = tbCB2.Matches(lineCB2);
+                            if (matchCB2.Count == 1)
+                            {
+                                comboBox2.Text = matchCB2[0].Value;
+
+
+                                String line8 = textBox8.Text;
+                                Regex tb8 = new Regex(@"\d+");
+                                MatchCollection match8 = tb8.Matches(line8);
+                                if (match8.Count == 1)
+                                {
+                                    textBox8.Text = match8[0].Value;
+
+
+                                    if (textBox1.Text != "" && comboBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && comboBox2.Text != "" && textBox8.Text != "")
+                                    {
+                                        listBox1.Items.Add(textBox5.Text + " " + textBox4.Text + " " + textBox3.Text + " " + comboBox1.Text + " " + textBox1.Text + " " + dateTimePicker2.Text + " " + comboBox2.Text + " " + textBox8.Text);
+                                    }
+                                    else
+                                    {
+                                        listBox1.Items.Add("Вы пропустили поле!");
+                                    }
+                                    textBox1.Clear();
+                                    textBox3.Clear();
+                                    textBox4.Clear();
+                                    textBox5.Clear();
+                                    textBox8.Clear();
+
+
+                                }
+
+                                else
+                                {
+                                    listBox1.Items.Add("Введите корректное коллимчество баллов по ЕГЭ");
+                                }
+                            }
+                            else
+                            {
+                                listBox1.Items.Add("Введите корректный пункт наличия документов");
+                            }
+                        }
+                        else
+                        {
+                            listBox1.Items.Add("Введите корректное ФИО");
+                        }
+                    }
+                    else
+                    {
+                        listBox1.Items.Add("Введите корректную форму обучения");
+                    }
+                }
+                else
+                {
+                    listBox1.Items.Add("Введите корректное название специальности");
+                }
             }
             else
             {
-                listBox1.Items.Add("Вы пропустили поле!");
+                listBox1.Items.Add("Введите корректный номер специальности");
             }
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox7.Clear();
-            textBox8.Clear();
+
 
         }
 
@@ -68,9 +150,9 @@ namespace Практика
             toolTip1.SetToolTip(textBox8, "Введите количество баллов по ЕГЭ абитуриента");
         }
 
-        private void textBox7_MouseHover(object sender, EventArgs e)
+        private void comboBox2_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(textBox7, "Введите наличие оригинала документов абитуриента");
+            toolTip1.SetToolTip(comboBox2, "Введите наличие оригинала документов абитуриента");
         }
 
         private void textBox1_MouseHover(object sender, EventArgs e)
@@ -78,9 +160,9 @@ namespace Практика
             toolTip1.SetToolTip(textBox1, "Введите Фамилию, Имя, Отчество абитуриента");
         }
 
-        private void textBox2_MouseHover(object sender, EventArgs e)
+        private void comboBox1_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(textBox2, "Введите форму обучения (Бюджет/Договор)");
+            toolTip1.SetToolTip(comboBox1, "Введите форму обучения (Бюджет/Договор)");
         }
 
         private void textBox3_MouseHover(object sender, EventArgs e)

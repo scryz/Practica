@@ -47,16 +47,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -276,13 +277,26 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Location = new System.Drawing.Point(624, 3);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel3.Size = new System.Drawing.Size(201, 63);
             this.panel3.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Бюджет",
+            "Договор"});
+            this.comboBox1.Location = new System.Drawing.Point(10, 42);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(181, 21);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.MouseHover += new System.EventHandler(this.comboBox1_MouseHover);
             // 
             // button2
             // 
@@ -297,15 +311,6 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Форма обучения";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.Location = new System.Drawing.Point(10, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // panel6
             // 
@@ -353,6 +358,15 @@
             this.panel7.Size = new System.Drawing.Size(201, 63);
             this.panel7.TabIndex = 17;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(10, 43);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(181, 20);
+            this.dateTimePicker2.TabIndex = 24;
+            // 
             // button6
             // 
             this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
@@ -368,13 +382,26 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.comboBox2);
             this.panel9.Controls.Add(this.button7);
-            this.panel9.Controls.Add(this.textBox7);
             this.panel9.Location = new System.Drawing.Point(417, 72);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel9.Size = new System.Drawing.Size(201, 63);
             this.panel9.TabIndex = 18;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Да",
+            "Нет"});
+            this.comboBox2.Location = new System.Drawing.Point(10, 42);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(181, 21);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.MouseHover += new System.EventHandler(this.comboBox2_MouseHover);
             // 
             // button7
             // 
@@ -388,15 +415,6 @@
             this.button7.TabIndex = 10;
             this.button7.Text = "Наличие оригинала документов";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox7.Location = new System.Drawing.Point(10, 43);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(181, 20);
-            this.textBox7.TabIndex = 11;
-            this.textBox7.MouseHover += new System.EventHandler(this.textBox7_MouseHover);
             // 
             // flowLayoutPanel1
             // 
@@ -482,21 +500,21 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
@@ -523,15 +541,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(906, 54);
             this.panel8.TabIndex = 23;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(10, 43);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(181, 20);
-            this.dateTimePicker2.TabIndex = 24;
             // 
             // Form1
             // 
@@ -560,12 +569,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -597,7 +604,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
@@ -605,7 +611,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button8;
@@ -623,6 +628,9 @@
         private System.Windows.Forms.ToolStripMenuItem правкаToolStripMenuItem;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
