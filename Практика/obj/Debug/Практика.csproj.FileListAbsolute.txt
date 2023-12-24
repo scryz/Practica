@@ -20,3 +20,14 @@ C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практик
 C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.csproj.CoreCompileInputs.cache
 C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.exe
 C:\Users\spere\Desktop\GitHub\Practica\Практика\obj\Debug\Практика.pdb
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.csproj.AssemblyReference.cache
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.csproj.SuggestedBindingRedirects.cache
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.Form1.resources
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.Properties.Resources.resources
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.csproj.GenerateResource.cache
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.csproj.CoreCompileInputs.cache
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.exe
+C:\Users\Оксана\Source\Repos\Practica\Практика\obj\Debug\Практика.pdb
+C:\Users\Оксана\Source\Repos\Practica\Практика\bin\Debug\Практика.exe.config
+C:\Users\Оксана\Source\Repos\Practica\Практика\bin\Debug\Практика.exe
+C:\Users\Оксана\Source\Repos\Practica\Практика\bin\Debug\Практика.pdb

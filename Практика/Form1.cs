@@ -33,162 +33,106 @@ namespace Практика
 
         private void Загрузить_Click(object sender, EventArgs e)
         {
-            String line4 = textBox4.Text;
-            Regex tb4 = new Regex(@"[0-9]{2}[.][0-9]{2}[.][0-9]{2}");
-            MatchCollection match4  = tb4.Matches(line4);
-            if (match4.Count == 1)
+            String lineCB3 = comboBox3.Text;
+            Regex tbCB3 = new Regex(@"Компьютер|Ноутбук|Нетбук");
+            MatchCollection matchCB3 = tbCB3.Matches(lineCB3);
+            if (matchCB3.Count == 1)
             {
-                textBox4.Text = match4[0].Value;
+                comboBox3.Text = matchCB3[0].Value;
 
-                String line3 = textBox3.Text;
-                Regex tb3 = new Regex(@"([А-Я][а-я]+)|[а-я]+");
-                MatchCollection match3 = tb3.Matches(line3);
-                if (match3.Count >= 1)
-                {
 
-                    textBox3.Text = match3[0].Value;
+                String line5 = textBox5.Text;
+            Regex tb5 = new Regex(@"[A-Z][a-z]+");
+            MatchCollection match5 = tb5.Matches(line5);
+            if (match5.Count >= 1)
+            {
 
-                    String lineCB1 = comboBox1.Text;
-                    Regex tbCB1 = new Regex("Договор|Бюджет");
-                    MatchCollection matchCB1 = tbCB1.Matches(lineCB1);
-                    if (matchCB1.Count == 1)
+                textBox5.Text = match5[0].Value;
+
+                
+
+
+                    String line1 = textBox1.Text;
+                    Regex tb1 = new Regex(@"[А-Я][а-я]+\s[А-Я][а-я]+\s[А-Я][а-я]+");
+                    MatchCollection match1 = tb1.Matches(line1);
+                    if (match1.Count >= 1)
                     {
 
-                        comboBox1.Text = matchCB1[0].Value;
+                        textBox1.Text = match1[0].Value;
 
-
-                        String line1 = textBox1.Text;
-                        Regex tb1 = new Regex(@"[А-Я][а-я]+\s[А-Я][а-я]+\s[А-Я][а-я]+");
-                        MatchCollection match1 = tb1.Matches(line1);
-                        if (match1.Count >= 1)
+                        String line2 = textBox2.Text;
+                        Regex tb2 = new Regex(@"[0-9]+");
+                        MatchCollection match2 = tb2.Matches(line2);
+                        if (match2.Count >= 1)
                         {
 
-                            textBox1.Text = match1[0].Value;
-
+                            textBox2.Text = match2[0].Value;
 
                             String lineCB2 = comboBox2.Text;
-                            Regex tbCB2 = new Regex(@"Да|Нет");
-                            MatchCollection matchCB2 = tbCB2.Matches(lineCB2);
-                            if (matchCB2.Count == 1)
+                        Regex tbCB2 = new Regex(@"Да|Нет");
+                        MatchCollection matchCB2 = tbCB2.Matches(lineCB2);
+                        if (matchCB2.Count == 1)
+                        {
+                            comboBox2.Text = matchCB2[0].Value;
+
+
+
+
+
+                            if (textBox1.Text != "" && comboBox2.Text != "" && textBox5.Text != "" && comboBox3.Text != "" && textBox2.Text != "" && comboBox2.Text != "")
                             {
-                                comboBox2.Text = matchCB2[0].Value;
+                                listBox1.Items.Add("Группа: " + comboBox3.Text + ", Модель: " + textBox5.Text + ", Дата: " + dateTimePicker2.Text + ", ФИО: " + textBox1.Text + ", Цена: " + textBox2.Text + "р., Сборка по заказу: " + comboBox2.Text);
 
-
-                                String line8 = textBox8.Text;
-                                Regex tb8 = new Regex(@"\d+");
-                                MatchCollection match8 = tb8.Matches(line8);
-                                if (match8.Count == 1)
-                                {
-                                    textBox8.Text = match8[0].Value;
-
-
-                                    if (textBox1.Text != "" && comboBox1.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && comboBox2.Text != "" && textBox8.Text != "")
-                                    {
-                                        listBox1.Items.Add(textBox5.Text + " " + textBox4.Text + " " + textBox3.Text + " " + comboBox1.Text + " " + textBox1.Text + " " + dateTimePicker2.Text + " " + comboBox2.Text + " " + textBox8.Text);
-                                    }
-                                    else
-                                    {
-                                        listBox1.Items.Add("Вы пропустили поле!");
-                                    }
                                     textBox1.Clear();
-                                    textBox3.Clear();
-                                    textBox4.Clear();
+                                    textBox2.Clear();
                                     textBox5.Clear();
-                                    textBox8.Clear();
-
-
+                                    comboBox2.SelectedIndex = -1;
+                                    comboBox3.SelectedIndex = -1;
                                 }
-
-                                else
-                                {
-                                    listBox1.Items.Add("Введите корректное коллимчество баллов по ЕГЭ");
-                                }
-                            }
                             else
                             {
-                                listBox1.Items.Add("Введите корректный пункт наличия документов");
+                                listBox1.Items.Add("Вы пропустили поле!");
                             }
+                            
+
+
+
                         }
+
                         else
                         {
-                            listBox1.Items.Add("Введите корректное ФИО");
+                            listBox2.Items.Add("Выберите поле 'Сборка по заказу'");
                         }
                     }
+
+                        else
+                        {
+                            listBox2.Items.Add("Введите корректную цену");
+                        }
+                    }
+
                     else
                     {
-                        listBox1.Items.Add("Введите корректную форму обучения");
+                        listBox2.Items.Add("Введите корректное ФИО");
                     }
                 }
-                else
-                {
-                    listBox1.Items.Add("Введите корректное название специальности");
-                }
-            }
+
             else
             {
-                listBox1.Items.Add("Введите корректный номер специальности");
+                listBox2.Items.Add("Введите корректную модель ПК");
             }
 
+        }
+            else
+            {
+                listBox2.Items.Add("Выберите корректную группу товара");
+            }
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            listBox2.Items.AddRange(File.ReadAllLines("Данные.txt"));
-
-        }
 
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox5.Text = listBox2.Text;
-        }
 
-
-        private void textBox8_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(textBox8, "Введите количество баллов по ЕГЭ абитуриента");
-        }
-
-        private void comboBox2_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(comboBox2, "Введите наличие оригинала документов абитуриента");
-        }
-
-        private void textBox1_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(textBox1, "Введите Фамилию, Имя, Отчество абитуриента");
-        }
-
-        private void comboBox1_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(comboBox1, "Введите форму обучения (Бюджет/Договор)");
-        }
-
-        private void textBox3_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(textBox3, "Введите название выбранной абитуриентом спецмальности");
-        }
-
-        private void textBox4_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(textBox4, "Введите номер выбранной абитуриентом специальности");
-        }
-
-        private void textBox5_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(textBox5, "Выберите из списка факультет");
-        }
-
-        private void button9_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(button9, "Нажмите, для загрузки списка факультетов");
-        }
-
-        private void Загрузить_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(Загрузить, "Нажмите, для загрузки данных абитуриента");
-        }
 
         private void button11_Click(object sender, EventArgs e)
         {
@@ -206,15 +150,7 @@ namespace Практика
             }
         }
 
-        private void button11_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(button11, "Нажмите, для сохранения данных о абитуриенте");
-        }
 
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.AddRange(File.ReadAllLines("Данные абитуриента.txt"));
-        }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -232,24 +168,22 @@ namespace Практика
             }
         }
 
-        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+
+        
 
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (listBox1.SelectedIndex != -1)
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-            else
-                MessageBox.Show("выберите элемент");
+            
+            int selectedIndex = listBox1.IndexFromPoint(e.Location);
 
+           
+            if (selectedIndex != -1)
+            {
+               
+                listBox1.Items.RemoveAt(selectedIndex);
+            }
         }
 
-        private void listBox1_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(listBox1, "Нажмите дважды на строку, для её удаления");
-        }
 
 
 
@@ -258,16 +192,84 @@ namespace Практика
             toolTip1.SetToolTip(dateTimePicker2, "Выберите дату подачи заявления абитуриентом");
         }
 
-        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Help.ShowHelp(this, "help.exe");
-        }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
                 Help.ShowHelp(this, "help.exe");
+            }
+        }
+
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    // Загружаем файл и выводим его содержимое в textBox2
+                    using (StreamReader streamReader = new StreamReader(openFileDialog.FileName))
+                    {
+                        comboBox3.Items.Clear();
+                        string line;
+                        while ((line = streamReader.ReadLine()) != null)
+                        {
+                            comboBox3.Items.Add(line);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void открытьToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
+                openFileDialog.RestoreDirectory = true;
+                openFileDialog.FilterIndex = 1;
+
+                
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    string[] lines = File.ReadAllLines(openFileDialog.FileName);
+                    foreach (string line in lines)
+                    {
+                        listBox1.Items.Add(line);
+                    }
+                }
+            }
+        }
+
+        private void справкаToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "help.exe");
+        }
+
+        private void выйтиToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void сохранитьToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Text documents (.txt)|*.txt";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter w = new StreamWriter(save.FileName);
+
+                foreach (var item in listBox1.Items)
+                    w.WriteLine(item.ToString());
+
+                w.Close();
             }
         }
 
